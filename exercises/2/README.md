@@ -98,6 +98,7 @@ Let's try running the program and observe the output for ourselves.
 1. First let's compile the program using the following script. For Windows:
    ```
    compile.bat
+   .\compile.bat is the call for all batch files
    ```
    For Mac/Linux:
    ```
