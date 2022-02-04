@@ -185,6 +185,7 @@ public class RentACatTest {
 	@Test
 	public void testListCatsNumCats0() {
 		// TODO
+		assertEquals("", r.listCats());
 		r.listCats(); 
 	}
 
