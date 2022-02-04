@@ -56,7 +56,7 @@ public class RentACatImpl implements RentACat {
 		String catsString = ""; 
 		for(Cat cat : cats){
 			if(!cat.getRented())  {
-				catsString = catsString.concat(String.format("ID %d. %s%n", cat.getId(), cat.getName())); 
+				catsString = catsString.concat(cat.toString()); 
 			}
 		}
 		return catsString;

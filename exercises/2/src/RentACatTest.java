@@ -206,7 +206,10 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		//assertEquals("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n", r.listCats());
+		Mockito.when(c1.toString()).thenReturn("ID 1. Jennyanydots\n");
+		Mockito.when(c2.toString()).thenReturn("ID 2. Old Deuteronomy\n");
+		Mockito.when(c3.toString()).thenReturn("ID 3. Mistoffelees\n");
+		assertEquals("ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n", r.listCats());
 	}
 
 	/**

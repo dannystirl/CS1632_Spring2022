@@ -425,7 +425,7 @@ RentACatImpl.java.  One way you can divide up the work is like the following:
   * testGetCatNullNumCats0          DONE
   * testGetCatNumCats3              DONE
   * testListCatsNumCats0            DONE
-  * testListCatsNumCats3            
+  * testListCatsNumCats3            DONE
   * testRentCatFailureNumCats0      DONE 
   * testRentCatFailureNumCats3      DONE
 

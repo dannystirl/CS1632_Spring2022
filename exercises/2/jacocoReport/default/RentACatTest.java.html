@@ -206,8 +206,11 @@ import org.mockito.*;
 <span class="fc" id="L206">		r.addCat(c1);</span>
 <span class="fc" id="L207">		r.addCat(c2);</span>
 <span class="fc" id="L208">		r.addCat(c3);</span>
-<span class="nc" id="L209">		assertEquals(&quot;ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n&quot;, r.listCats());</span>
-<span class="nc" id="L210">	}</span>
+<span class="fc" id="L209">		Mockito.when(c1.toString()).thenReturn(&quot;ID 1. Jennyanydots\n&quot;);</span>
+<span class="fc" id="L210">		Mockito.when(c2.toString()).thenReturn(&quot;ID 2. Old Deuteronomy\n&quot;);</span>
+<span class="fc" id="L211">		Mockito.when(c3.toString()).thenReturn(&quot;ID 3. Mistoffelees\n&quot;);</span>
+<span class="fc" id="L212">		assertEquals(&quot;ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n&quot;, r.listCats());</span>
+<span class="fc" id="L213">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -219,9 +222,9 @@ import org.mockito.*;
 	@Test
 	public void testRentCatFailureNumCats0() {
 		// TODO
-<span class="fc" id="L222">		assertEquals(false, r.rentCat(2));</span>
-<span class="fc" id="L223">		r.rentCat(2); </span>
-<span class="fc" id="L224">	}</span>
+<span class="fc" id="L225">		assertEquals(false, r.rentCat(2));</span>
+<span class="fc" id="L226">		r.rentCat(2); </span>
+<span class="fc" id="L227">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -238,15 +241,15 @@ import org.mockito.*;
 	@Test
 	public void testRentCatFailureNumCats3() {
 		// TODO
-<span class="fc" id="L241">		r.addCat(c1);</span>
-<span class="fc" id="L242">		r.addCat(c2);</span>
-<span class="fc" id="L243">		r.addCat(c3);</span>
-<span class="fc" id="L244">		Mockito.when(c2.getRented()).thenReturn(true);</span>
-<span class="fc" id="L245">		assertEquals(false, r.rentCat(2));</span>
-<span class="fc" id="L246">		Mockito.verify(c1, Mockito.times(0)).rentCat();</span>
-<span class="fc" id="L247">		Mockito.verify(c2, Mockito.times(0)).rentCat();</span>
-<span class="fc" id="L248">		Mockito.verify(c3, Mockito.times(0)).rentCat();</span>
-<span class="fc" id="L249">	}</span>
+<span class="fc" id="L244">		r.addCat(c1);</span>
+<span class="fc" id="L245">		r.addCat(c2);</span>
+<span class="fc" id="L246">		r.addCat(c3);</span>
+<span class="fc" id="L247">		Mockito.when(c2.getRented()).thenReturn(true);</span>
+<span class="fc" id="L248">		assertEquals(false, r.rentCat(2));</span>
+<span class="fc" id="L249">		Mockito.verify(c1, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L250">		Mockito.verify(c2, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L251">		Mockito.verify(c3, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L252">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -258,7 +261,7 @@ import org.mockito.*;
 	@Test
 	public void testReturnCatFailureNumCats0() {
 		// TODO
-<span class="fc" id="L261">	}</span>
+<span class="fc" id="L264">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -276,6 +279,6 @@ import org.mockito.*;
 	@Test
 	public void testReturnCatNumCats3() {
 		// TODO
-<span class="fc" id="L279">	}</span>
+<span class="fc" id="L282">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202101150304</span></div></body></html>
