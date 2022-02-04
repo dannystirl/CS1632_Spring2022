@@ -32,6 +32,12 @@ public class RentACatImpl implements RentACat {
 
 	public boolean rentCat(int id) {
 		// TODO
+		for(Cat cat : cats){
+			if(!cat.getRented() && cat.getId()==id) {
+				cat.rentCat();
+				return true; 
+			}
+		}
 		return false;
 	}
 
@@ -49,8 +55,9 @@ public class RentACatImpl implements RentACat {
 		// TODO
 		String catsString = ""; 
 		for(Cat cat : cats){
-			if(!cat.getRented()) 
+			if(!cat.getRented())  {
 				catsString = catsString.concat(String.format("ID %d. %s%n", cat.getId(), cat.getName())); 
+			}
 		}
 		return catsString;
 	}

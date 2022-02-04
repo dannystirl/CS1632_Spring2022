@@ -241,10 +241,8 @@ public class RentACatTest {
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
-		assertEquals(true, r.catAvailable(2));
-		r.rentCat(2); 
+		Mockito.when(c2.getRented()).thenReturn(true);
 		assertEquals(false, r.rentCat(2));
-		r.rentCat(2); 
 		Mockito.verify(c1, Mockito.times(0)).rentCat();
 		Mockito.verify(c2, Mockito.times(0)).rentCat();
 		Mockito.verify(c3, Mockito.times(0)).rentCat();

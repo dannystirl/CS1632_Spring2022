@@ -425,7 +425,7 @@ RentACatImpl.java.  One way you can divide up the work is like the following:
   * testGetCatNullNumCats0          DONE
   * testGetCatNumCats3              DONE
   * testListCatsNumCats0            DONE
-  * testListCatsNumCats3
+  * testListCatsNumCats3            
   * testRentCatFailureNumCats0      DONE 
   * testRentCatFailureNumCats3      DONE
 
@@ -441,7 +441,7 @@ submission.
   * returnCat
 * Partner 2:
   * listCats         DONE
-  * rentCat
+  * rentCat          DONE
 
 Push frequently and also pull frequently from your GitHub repository whenever
 you are done finishing a method to merge changes as you go along.  Since we are

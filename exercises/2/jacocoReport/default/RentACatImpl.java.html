@@ -32,7 +32,13 @@ import java.util.Scanner;
 
 	public boolean rentCat(int id) {
 		// TODO
-<span class="fc" id="L35">		return false;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">		for(Cat cat : cats){</span>
+<span class="pc bpc" id="L36" title="1 of 4 branches missed.">			if(!cat.getRented() &amp;&amp; cat.getId()==id) {</span>
+<span class="nc" id="L37">				cat.rentCat();</span>
+<span class="nc" id="L38">				return true; </span>
+			}
+<span class="fc" id="L40">		}</span>
+<span class="fc" id="L41">		return false;</span>
 	}
 
 	/**
@@ -47,12 +53,13 @@ import java.util.Scanner;
 
 	public String listCats() {
 		// TODO
-<span class="fc" id="L50">		String catsString = &quot;&quot;; </span>
-<span class="fc bfc" id="L51" title="All 2 branches covered.">		for(Cat cat : cats){</span>
-<span class="pc bpc" id="L52" title="1 of 2 branches missed.">			if(!cat.getRented()) </span>
-<span class="fc" id="L53">				catsString = catsString.concat(String.format(&quot;ID %d. %s%n&quot;, cat.getId(), cat.getName())); </span>
-<span class="fc" id="L54">		}</span>
-<span class="fc" id="L55">		return catsString;</span>
+<span class="fc" id="L56">		String catsString = &quot;&quot;; </span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		for(Cat cat : cats){</span>
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">			if(!cat.getRented())  {</span>
+<span class="fc" id="L59">				catsString = catsString.concat(String.format(&quot;ID %d. %s%n&quot;, cat.getId(), cat.getName())); </span>
+			}
+<span class="fc" id="L61">		}</span>
+<span class="fc" id="L62">		return catsString;</span>
 	}
 
 	/**
@@ -66,7 +73,7 @@ import java.util.Scanner;
 
 	public boolean catExists(int id) {
 		// TODO
-<span class="fc" id="L69">		return false;</span>
+<span class="fc" id="L76">		return false;</span>
 	}
 
 	/**
@@ -81,21 +88,21 @@ import java.util.Scanner;
 	public boolean catAvailable(int id) {
 
 		// null / zero-element check
-<span class="pc bpc" id="L84" title="1 of 4 branches missed.">		if (cats == null || cats.size() == 0) {</span>
-<span class="fc" id="L85">			return false;</span>
+<span class="pc bpc" id="L91" title="1 of 4 branches missed.">		if (cats == null || cats.size() == 0) {</span>
+<span class="fc" id="L92">			return false;</span>
 		}
-<span class="fc" id="L87">		Cat c = getCat(id);</span>
-<span class="pc bpc" id="L88" title="1 of 2 branches missed.">		if (c == null) {</span>
+<span class="fc" id="L94">		Cat c = getCat(id);</span>
+<span class="pc bpc" id="L95" title="1 of 2 branches missed.">		if (c == null) {</span>
 			// No cat of this ID exists, thus it is not available
-<span class="nc" id="L90">			return false;</span>
-<span class="pc bpc" id="L91" title="1 of 2 branches missed.">		} else if (c.getRented()) {</span>
+<span class="nc" id="L97">			return false;</span>
+<span class="pc bpc" id="L98" title="1 of 2 branches missed.">		} else if (c.getRented()) {</span>
 			// This cat exists, but has already been rented
-<span class="nc" id="L93">			return false;</span>
+<span class="nc" id="L100">			return false;</span>
 		}
 
 		// If cat exists and is not rented, then the cat
 		// is available to rent
-<span class="fc" id="L98">		return true;</span>
+<span class="fc" id="L105">		return true;</span>
 
 	}
 
@@ -110,23 +117,23 @@ import java.util.Scanner;
 	public Cat getCat(int id) {
 
 		// null / zero-element check
-<span class="pc bpc" id="L113" title="1 of 4 branches missed.">		if (cats == null || cats.size() == 0) {</span>
-<span class="fc" id="L114">			return null;</span>
+<span class="pc bpc" id="L120" title="1 of 4 branches missed.">		if (cats == null || cats.size() == 0) {</span>
+<span class="fc" id="L121">			return null;</span>
 		}
 
 		// Loop through every cat in the cat list
-<span class="pc bpc" id="L118" title="1 of 2 branches missed.">		for (Cat c : cats) {</span>
+<span class="pc bpc" id="L125" title="1 of 2 branches missed.">		for (Cat c : cats) {</span>
 			// If we found a cat whose id matches the id
 			// of the argument, then we have a match and
 			// can thus return a reference to that cat
-<span class="fc bfc" id="L122" title="All 2 branches covered.">			if (c.getId() == id) {</span>
-<span class="fc" id="L123">				return c;</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">			if (c.getId() == id) {</span>
+<span class="fc" id="L130">				return c;</span>
 			}
-<span class="fc" id="L125">		}</span>
+<span class="fc" id="L132">		}</span>
 		// If we get all the way through the list and did
 		// not find a cat whose ID matches the passed-in
 		// ID, then the cat is not in the list
-<span class="nc" id="L129">		return null;</span>
+<span class="nc" id="L136">		return null;</span>
 
 	}
 
@@ -137,8 +144,8 @@ import java.util.Scanner;
 	 */
 
 	public void addCat(Cat c) {
-<span class="fc" id="L140">		cats.add(c);</span>
-<span class="fc" id="L141">	}</span>
+<span class="fc" id="L147">		cats.add(c);</span>
+<span class="fc" id="L148">	}</span>
 
 	/**
 	 * Main method
@@ -148,101 +155,101 @@ import java.util.Scanner;
 	public static void main(String[] args) {
 
 		// Turn off automatic bug injection in the Cat class.
-<span class="nc" id="L151">		Cat.bugInjectionOn = false;</span>
+<span class="nc" id="L158">		Cat.bugInjectionOn = false;</span>
 
-<span class="nc" id="L153">		RentACat rc = new RentACatImpl();</span>
+<span class="nc" id="L160">		RentACat rc = new RentACatImpl();</span>
 
-<span class="nc" id="L155">		rc.addCat(new Cat(1, &quot;Jennyanydots&quot;));</span>
-<span class="nc" id="L156">		rc.addCat(new Cat(2, &quot;Old Deuteronomy&quot;));</span>
-<span class="nc" id="L157">		rc.addCat(new Cat(3, &quot;Mistoffelees&quot;));</span>
+<span class="nc" id="L162">		rc.addCat(new Cat(1, &quot;Jennyanydots&quot;));</span>
+<span class="nc" id="L163">		rc.addCat(new Cat(2, &quot;Old Deuteronomy&quot;));</span>
+<span class="nc" id="L164">		rc.addCat(new Cat(3, &quot;Mistoffelees&quot;));</span>
 
-<span class="nc" id="L159">		Scanner sc = new Scanner(System.in);</span>
-<span class="nc" id="L160">		boolean validCat = false;</span>
+<span class="nc" id="L166">		Scanner sc = new Scanner(System.in);</span>
+<span class="nc" id="L167">		boolean validCat = false;</span>
 
 		int option;
-<span class="nc" id="L163">		boolean keepGoing = true;</span>
+<span class="nc" id="L170">		boolean keepGoing = true;</span>
 
-<span class="nc bnc" id="L165" title="All 2 branches missed.">		while (keepGoing) {</span>
-<span class="nc" id="L166">			validCat = false;</span>
-<span class="nc" id="L167">			System.out.print(&quot;Option [1,2,3,4] &gt; &quot;);</span>
+<span class="nc bnc" id="L172" title="All 2 branches missed.">		while (keepGoing) {</span>
+<span class="nc" id="L173">			validCat = false;</span>
+<span class="nc" id="L174">			System.out.print(&quot;Option [1,2,3,4] &gt; &quot;);</span>
 			try {
-<span class="nc" id="L169">				option = sc.nextInt();</span>
-<span class="nc bnc" id="L170" title="All 5 branches missed.">				switch (option) {</span>
+<span class="nc" id="L176">				option = sc.nextInt();</span>
+<span class="nc bnc" id="L177" title="All 5 branches missed.">				switch (option) {</span>
 				case 1:
-<span class="nc" id="L172">					System.out.println(&quot;Cats for Rent&quot;);</span>
-<span class="nc" id="L173">					System.out.print(rc.listCats());</span>
-<span class="nc" id="L174">					break;</span>
+<span class="nc" id="L179">					System.out.println(&quot;Cats for Rent&quot;);</span>
+<span class="nc" id="L180">					System.out.print(rc.listCats());</span>
+<span class="nc" id="L181">					break;</span>
 				case 2:
-<span class="nc" id="L176">					validCat = false;</span>
+<span class="nc" id="L183">					validCat = false;</span>
 					int catIdToRent;
-<span class="nc bnc" id="L178" title="All 2 branches missed.">					while (!validCat) {</span>
-<span class="nc" id="L179">						System.out.print(&quot;Rent which cat? &gt; &quot;);</span>
+<span class="nc bnc" id="L185" title="All 2 branches missed.">					while (!validCat) {</span>
+<span class="nc" id="L186">						System.out.print(&quot;Rent which cat? &gt; &quot;);</span>
 						try {
-<span class="nc" id="L181">							catIdToRent = sc.nextInt();</span>
-<span class="nc" id="L182">							Cat c = rc.getCat(catIdToRent);</span>
-<span class="nc bnc" id="L183" title="All 2 branches missed.">							if (c == null) {</span>
-<span class="nc" id="L184">								throw new NumberFormatException();</span>
-<span class="nc bnc" id="L185" title="All 2 branches missed.">							} else if (c.getRented()) {</span>
-<span class="nc" id="L186">								System.out.println(&quot;Sorry, &quot; + c.getName() + &quot; is not here!&quot;);</span>
+<span class="nc" id="L188">							catIdToRent = sc.nextInt();</span>
+<span class="nc" id="L189">							Cat c = rc.getCat(catIdToRent);</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">							if (c == null) {</span>
+<span class="nc" id="L191">								throw new NumberFormatException();</span>
+<span class="nc bnc" id="L192" title="All 2 branches missed.">							} else if (c.getRented()) {</span>
+<span class="nc" id="L193">								System.out.println(&quot;Sorry, &quot; + c.getName() + &quot; is not here!&quot;);</span>
 							} else {
-<span class="nc" id="L188">								rc.rentCat(catIdToRent);</span>
-<span class="nc" id="L189">								System.out.println(c.getName() + &quot; has been rented.&quot;);</span>
-<span class="nc" id="L190">								validCat = true;</span>
+<span class="nc" id="L195">								rc.rentCat(catIdToRent);</span>
+<span class="nc" id="L196">								System.out.println(c.getName() + &quot; has been rented.&quot;);</span>
+<span class="nc" id="L197">								validCat = true;</span>
 							}
-<span class="nc" id="L192">						} catch (NumberFormatException nfex) {</span>
-<span class="nc" id="L193">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
-<span class="nc" id="L194">						} catch (Exception ex) {</span>
-<span class="nc" id="L195">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
-<span class="nc" id="L196">							sc.next();</span>
-<span class="nc" id="L197">						}</span>
+<span class="nc" id="L199">						} catch (NumberFormatException nfex) {</span>
+<span class="nc" id="L200">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
+<span class="nc" id="L201">						} catch (Exception ex) {</span>
+<span class="nc" id="L202">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
+<span class="nc" id="L203">							sc.next();</span>
+<span class="nc" id="L204">						}</span>
 					}
 					break;
 				case 3:
-<span class="nc" id="L201">					validCat = false;</span>
+<span class="nc" id="L208">					validCat = false;</span>
 					int catIdToReturn;
-<span class="nc bnc" id="L203" title="All 2 branches missed.">					while (!validCat) {</span>
-<span class="nc" id="L204">						System.out.print(&quot;Return which cat? &gt; &quot;);</span>
+<span class="nc bnc" id="L210" title="All 2 branches missed.">					while (!validCat) {</span>
+<span class="nc" id="L211">						System.out.print(&quot;Return which cat? &gt; &quot;);</span>
 						try {
-<span class="nc" id="L206">							catIdToReturn = sc.nextInt();</span>
-<span class="nc" id="L207">							Cat c = rc.getCat(catIdToReturn);</span>
-<span class="nc bnc" id="L208" title="All 2 branches missed.">							if (c == null) {</span>
-<span class="nc" id="L209">								throw new NumberFormatException();</span>
-<span class="nc bnc" id="L210" title="All 2 branches missed.">							} else if (!c.getRented()) {</span>
-<span class="nc" id="L211">								System.out.println(c.getName() + &quot; is already here!&quot;);</span>
+<span class="nc" id="L213">							catIdToReturn = sc.nextInt();</span>
+<span class="nc" id="L214">							Cat c = rc.getCat(catIdToReturn);</span>
+<span class="nc bnc" id="L215" title="All 2 branches missed.">							if (c == null) {</span>
+<span class="nc" id="L216">								throw new NumberFormatException();</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">							} else if (!c.getRented()) {</span>
+<span class="nc" id="L218">								System.out.println(c.getName() + &quot; is already here!&quot;);</span>
 							} else {
-<span class="nc" id="L213">								rc.returnCat(catIdToReturn);</span>
-<span class="nc" id="L214">								System.out.println(&quot;Welcome back,&quot; + c.getName() + &quot;!&quot;);</span>
-<span class="nc" id="L215">								validCat = true;</span>
+<span class="nc" id="L220">								rc.returnCat(catIdToReturn);</span>
+<span class="nc" id="L221">								System.out.println(&quot;Welcome back,&quot; + c.getName() + &quot;!&quot;);</span>
+<span class="nc" id="L222">								validCat = true;</span>
 							}
-<span class="nc" id="L217">						} catch (NumberFormatException nfex) {</span>
-<span class="nc" id="L218">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
-<span class="nc" id="L219">						} catch (Exception ex) {</span>
-<span class="nc" id="L220">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
-<span class="nc" id="L221">							sc.next();</span>
-<span class="nc" id="L222">						}</span>
+<span class="nc" id="L224">						} catch (NumberFormatException nfex) {</span>
+<span class="nc" id="L225">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
+<span class="nc" id="L226">						} catch (Exception ex) {</span>
+<span class="nc" id="L227">							System.out.println(&quot;Invalid cat ID.&quot;);</span>
+<span class="nc" id="L228">							sc.next();</span>
+<span class="nc" id="L229">						}</span>
 					}
 
 					break;
 				case 4:
-<span class="nc" id="L227">					keepGoing = false;</span>
-<span class="nc" id="L228">					break;</span>
+<span class="nc" id="L234">					keepGoing = false;</span>
+<span class="nc" id="L235">					break;</span>
 				default:
-<span class="nc" id="L230">					throw new NumberFormatException();</span>
+<span class="nc" id="L237">					throw new NumberFormatException();</span>
 				}
-<span class="nc" id="L232">			} catch (Exception nfex) {</span>
-<span class="nc" id="L233">				System.err.println(&quot;Please enter 1, 2, 3 or 4&quot;);</span>
-<span class="nc" id="L234">				System.err.println(&quot;1. See list of cats for rent&quot;);</span>
-<span class="nc" id="L235">				System.err.println(&quot;2. Rent a cat to a customer&quot;);</span>
-<span class="nc" id="L236">				System.err.println(&quot;3. Return a cat&quot;);</span>
-<span class="nc" id="L237">				System.err.println(&quot;4. Quit&quot;);</span>
+<span class="nc" id="L239">			} catch (Exception nfex) {</span>
+<span class="nc" id="L240">				System.err.println(&quot;Please enter 1, 2, 3 or 4&quot;);</span>
+<span class="nc" id="L241">				System.err.println(&quot;1. See list of cats for rent&quot;);</span>
+<span class="nc" id="L242">				System.err.println(&quot;2. Rent a cat to a customer&quot;);</span>
+<span class="nc" id="L243">				System.err.println(&quot;3. Return a cat&quot;);</span>
+<span class="nc" id="L244">				System.err.println(&quot;4. Quit&quot;);</span>
 				// Clear out the non-int in the scanner
-<span class="nc" id="L239">				sc.next();</span>
-<span class="nc" id="L240">			}</span>
+<span class="nc" id="L246">				sc.next();</span>
+<span class="nc" id="L247">			}</span>
 		}
 
-<span class="nc" id="L243">		System.out.println(&quot;Closing up shop for the day!&quot;);</span>
+<span class="nc" id="L250">		System.out.println(&quot;Closing up shop for the day!&quot;);</span>
 
-<span class="nc" id="L245">		sc.close();</span>
-<span class="nc" id="L246">	}</span>
+<span class="nc" id="L252">		sc.close();</span>
+<span class="nc" id="L253">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202101150304</span></div></body></html>
