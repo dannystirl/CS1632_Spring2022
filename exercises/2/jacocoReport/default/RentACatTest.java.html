@@ -172,8 +172,11 @@ import org.mockito.*;
 	@Test
 	public void testCatExistsTrueNumCats3() {
 		// TODO
-<span class="fc" id="L175">		r.catExists(2); </span>
-<span class="fc" id="L176">	}</span>
+<span class="fc" id="L175">		r.addCat(c1);</span>
+<span class="fc" id="L176">		r.addCat(c2);</span>
+<span class="fc" id="L177">		r.addCat(c3);</span>
+<span class="fc" id="L178">		r.catExists(2); </span>
+<span class="fc" id="L179">	}</span>
 
 	/**
 	 * Test case for String listCats().
@@ -185,9 +188,9 @@ import org.mockito.*;
 	@Test
 	public void testListCatsNumCats0() {
 		// TODO
-<span class="fc" id="L188">		assertEquals(&quot;&quot;, r.listCats());</span>
-<span class="fc" id="L189">		r.listCats(); </span>
-<span class="fc" id="L190">	}</span>
+<span class="fc" id="L191">		assertEquals(&quot;&quot;, r.listCats());</span>
+<span class="fc" id="L192">		r.listCats(); </span>
+<span class="fc" id="L193">	}</span>
 
 	/**
 	 * Test case for String listCats().
@@ -200,7 +203,11 @@ import org.mockito.*;
 	@Test
 	public void testListCatsNumCats3() {
 		// TODO
-<span class="fc" id="L203">	}</span>
+<span class="fc" id="L206">		r.addCat(c1);</span>
+<span class="fc" id="L207">		r.addCat(c2);</span>
+<span class="fc" id="L208">		r.addCat(c3);</span>
+		//assertEquals(&quot;ID 1. Jennyanydots\nID 2. Old Deuteronomy\nID 3. Mistoffelees\n&quot;, r.listCats());
+<span class="fc" id="L210">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -212,7 +219,9 @@ import org.mockito.*;
 	@Test
 	public void testRentCatFailureNumCats0() {
 		// TODO
-<span class="fc" id="L215">	}</span>
+<span class="fc" id="L222">		assertEquals(false, r.rentCat(2));</span>
+<span class="fc" id="L223">		r.rentCat(2); </span>
+<span class="fc" id="L224">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -229,7 +238,17 @@ import org.mockito.*;
 	@Test
 	public void testRentCatFailureNumCats3() {
 		// TODO
-<span class="fc" id="L232">	}</span>
+<span class="fc" id="L241">		r.addCat(c1);</span>
+<span class="fc" id="L242">		r.addCat(c2);</span>
+<span class="fc" id="L243">		r.addCat(c3);</span>
+<span class="fc" id="L244">		assertEquals(true, r.catAvailable(2));</span>
+<span class="fc" id="L245">		r.rentCat(2); </span>
+<span class="fc" id="L246">		assertEquals(false, r.rentCat(2));</span>
+<span class="fc" id="L247">		r.rentCat(2); </span>
+<span class="fc" id="L248">		Mockito.verify(c1, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L249">		Mockito.verify(c2, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L250">		Mockito.verify(c3, Mockito.times(0)).rentCat();</span>
+<span class="fc" id="L251">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -241,7 +260,7 @@ import org.mockito.*;
 	@Test
 	public void testReturnCatFailureNumCats0() {
 		// TODO
-<span class="fc" id="L244">	}</span>
+<span class="fc" id="L263">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -259,6 +278,6 @@ import org.mockito.*;
 	@Test
 	public void testReturnCatNumCats3() {
 		// TODO
-<span class="fc" id="L262">	}</span>
+<span class="fc" id="L281">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202101150304</span></div></body></html>

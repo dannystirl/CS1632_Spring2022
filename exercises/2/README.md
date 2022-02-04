@@ -421,13 +421,13 @@ RentACatImpl.java.  One way you can divide up the work is like the following:
   * testReturnCatFailureNumCats0
   * testReturnCatNumCats3
 * Partner 2:
-  * setUp
+  * setUp                           DONE 
   * testGetCatNullNumCats0          DONE
   * testGetCatNumCats3              DONE
-  * testListCatsNumCats0
+  * testListCatsNumCats0            DONE
   * testListCatsNumCats3
-  * testRentCatFailureNumCats0
-  * testRentCatFailureNumCats3
+  * testRentCatFailureNumCats0      DONE 
+  * testRentCatFailureNumCats3      DONE
 
 Notice that the setUp method is repeated for both partners.  Both of you will
 have to implement the setUp method individually to have your assigned tests
@@ -440,7 +440,7 @@ submission.
   * catExists
   * returnCat
 * Partner 2:
-  * listCats
+  * listCats         DONE
   * rentCat
 
 Push frequently and also pull frequently from your GitHub repository whenever
