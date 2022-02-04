@@ -415,15 +415,15 @@ RentACatImpl.java.  One way you can divide up the work is like the following:
   * setUp
   * testCatAvailableFalseNumCats0
   * testCatAvailableFalseNumCats3
-  * testCatAvailableTrueNumCats3
-  * testCatExistsFalseNumCats0
+  * testCatAvailableTrueNumCats3    DONE
+  * testCatExistsFalseNumCats0      DONE
   * testCatExistsTrueNumCats3
   * testReturnCatFailureNumCats0
   * testReturnCatNumCats3
 * Partner 2:
   * setUp
-  * testGetCatNullNumCats0
-  * testGetCatNumCats3
+  * testGetCatNullNumCats0          DONE
+  * testGetCatNumCats3              DONE
   * testListCatsNumCats0
   * testListCatsNumCats3
   * testRentCatFailureNumCats0

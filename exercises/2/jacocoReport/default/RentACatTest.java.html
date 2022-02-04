@@ -1,4 +1,4 @@
-import org.junit.Test;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RentACatTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">RentACatTest.java</span></div><h1>RentACatTest.java</h1><pre class="source lang-java linenums">import org.junit.Test;
 import static org.junit.Assert.*;
 
 import javax.xml.catalog.Catalog;
@@ -10,7 +10,7 @@ import org.junit.runners.MethodSorters;
 import org.mockito.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class RentACatTest {
+<span class="fc" id="L13">public class RentACatTest {</span>
 
 	/**
 	 * The test fixture for this JUnit test. Test fixture: a fixed state of a set of
@@ -29,46 +29,46 @@ public class RentACatTest {
 	public void setUp() throws Exception {
 		// Turn on automatic bug injection in the Cat class, to emulate a buggy Cat.
 		// Your unit tests should work regardless of these bugs if you mock all Cats.
-		Cat.bugInjectionOn = true;
+<span class="fc" id="L32">		Cat.bugInjectionOn = true;</span>
 
 		// INITIALIZE THE TEST FIXTURE
 		// 1. Create a new RentACat object and assign to r
-		r = RentACat.createInstance();
+<span class="fc" id="L36">		r = RentACat.createInstance();</span>
 
-		// 2. Create an unrented mock Cat with ID 1 and name "Jennyanydots", assign to c1
+		// 2. Create an unrented mock Cat with ID 1 and name &quot;Jennyanydots&quot;, assign to c1
 		// TODO: Fill in
-		c1 = Mockito.mock(Cat.class);
-		Mockito.when(c1.getId()).thenReturn(1);
-		Mockito.when(c1.getName()).thenReturn("Jennyanydots");
-		Mockito.when(c1.getRented()).thenReturn(false);
+<span class="fc" id="L40">		c1 = Mockito.mock(Cat.class);</span>
+<span class="fc" id="L41">		Mockito.when(c1.getId()).thenReturn(1);</span>
+<span class="fc" id="L42">		Mockito.when(c1.getName()).thenReturn(&quot;Jennyanydots&quot;);</span>
+<span class="fc" id="L43">		Mockito.when(c1.getRented()).thenReturn(false);</span>
 		
-		// 3. Create an unrented mock Cat with ID 2 and name "Old Deuteronomy", assign to c2
+		// 3. Create an unrented mock Cat with ID 2 and name &quot;Old Deuteronomy&quot;, assign to c2
 		// TODO: Fill in
-		c2 = Mockito.mock(Cat.class);
-		Mockito.when(c2.getId()).thenReturn(2);
-		Mockito.when(c2.getName()).thenReturn("Old Deuteronomy");
-		Mockito.when(c2.getRented()).thenReturn(false);
+<span class="fc" id="L47">		c2 = Mockito.mock(Cat.class);</span>
+<span class="fc" id="L48">		Mockito.when(c2.getId()).thenReturn(2);</span>
+<span class="fc" id="L49">		Mockito.when(c2.getName()).thenReturn(&quot;Old Deuteronomy&quot;);</span>
+<span class="fc" id="L50">		Mockito.when(c2.getRented()).thenReturn(false);</span>
 
-		// 4. Create an unrented mock Cat with ID 3 and name "Mistoffelees", assign to c3
+		// 4. Create an unrented mock Cat with ID 3 and name &quot;Mistoffelees&quot;, assign to c3
 		// TODO: Fill in
-		c3 = Mockito.mock(Cat.class);
-		Mockito.when(c3.getId()).thenReturn(3);
-		Mockito.when(c3.getName()).thenReturn("Mistoffelees");
-		Mockito.when(c3.getRented()).thenReturn(false);
+<span class="fc" id="L54">		c3 = Mockito.mock(Cat.class);</span>
+<span class="fc" id="L55">		Mockito.when(c3.getId()).thenReturn(3);</span>
+<span class="fc" id="L56">		Mockito.when(c3.getName()).thenReturn(&quot;Mistoffelees&quot;);</span>
+<span class="fc" id="L57">		Mockito.when(c3.getRented()).thenReturn(false);</span>
 		
 		// Hint: You will have to stub the mocked Cats to make them behave as if the ID
-		// is 1 and name is "Jennyanydots", etc.
-	}
+		// is 1 and name is &quot;Jennyanydots&quot;, etc.
+<span class="fc" id="L61">	}</span>
 
 	@After
 	public void tearDown() throws Exception {
 		// Not necessary strictly speaking since the references will be overwritten in
 		// the next setUp call anyway and Java has automatic garbage collection.
-		r = null;
-		c1 = null;
-		c2 = null;
-		c3 = null;
-	}
+<span class="fc" id="L67">		r = null;</span>
+<span class="fc" id="L68">		c1 = null;</span>
+<span class="fc" id="L69">		c2 = null;</span>
+<span class="fc" id="L70">		c3 = null;</span>
+<span class="fc" id="L71">	}</span>
 
 	/**
 	 * Test case for Cat getCat(int id).
@@ -80,8 +80,8 @@ public class RentACatTest {
 	@Test
 	public void testGetCatNullNumCats0() {
 		// TODO
-		assertEquals(null, r.getCat(2));
-	}
+<span class="fc" id="L83">		assertEquals(null, r.getCat(2));</span>
+<span class="fc" id="L84">	}</span>
 
 	/**
 	 * Test case for Cat getCat(int id).
@@ -94,12 +94,12 @@ public class RentACatTest {
 	@Test
 	public void testGetCatNumCats3() {
 		// TODO
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
-		assertNotEquals(null, r.getCat(2));
-		assertEquals(2, r.getCat(2).getId());
-	}
+<span class="fc" id="L97">		r.addCat(c1);</span>
+<span class="fc" id="L98">		r.addCat(c2);</span>
+<span class="fc" id="L99">		r.addCat(c3);</span>
+<span class="fc" id="L100">		assertNotEquals(null, r.getCat(2));</span>
+<span class="fc" id="L101">		assertEquals(2, r.getCat(2).getId());</span>
+<span class="fc" id="L102">	}</span>
 
 	/**
 	 * Test case for boolean catAvailable(int id).
@@ -111,8 +111,8 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableFalseNumCats0() {
 		// TODO
-		assertEquals(false, r.catAvailable(2)); 
-	}
+<span class="fc" id="L114">		assertEquals(false, r.catAvailable(2)); </span>
+<span class="fc" id="L115">	}</span>
 
 	/**
 	 * Test case for boolean catAvailable(int id).
@@ -126,13 +126,13 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableTrueNumCats3() {
 		// TODO
-		r.addCat(c1);
-		r.addCat(c2);
-		r.addCat(c3);
-		c3.rentCat();
-		assertEquals(true, r.catAvailable(2));
-		r.catAvailable(2); 
-	}
+<span class="fc" id="L129">		r.addCat(c1);</span>
+<span class="fc" id="L130">		r.addCat(c2);</span>
+<span class="fc" id="L131">		r.addCat(c3);</span>
+<span class="fc" id="L132">		c3.rentCat();</span>
+<span class="fc" id="L133">		assertEquals(true, r.catAvailable(2));</span>
+<span class="fc" id="L134">		r.catAvailable(2); </span>
+<span class="fc" id="L135">	}</span>
 
 	/**
 	 * Test case for boolean catAvailable(int id).
@@ -146,8 +146,8 @@ public class RentACatTest {
 	@Test
 	public void testCatAvailableFalseNumCats3() {
 		// TODO
-		r.catAvailable(2); 
-	}
+<span class="fc" id="L149">		r.catAvailable(2); </span>
+<span class="fc" id="L150">	}</span>
 
 	/**
 	 * Test case for boolean catExists(int id).
@@ -159,8 +159,8 @@ public class RentACatTest {
 	@Test
 	public void testCatExistsFalseNumCats0() {
 		// TODO
-		r.catExists(2);
-	}
+<span class="fc" id="L162">		r.catExists(2);</span>
+<span class="fc" id="L163">	}</span>
 
 	/**
 	 * Test case for boolean catExists(int id).
@@ -172,34 +172,34 @@ public class RentACatTest {
 	@Test
 	public void testCatExistsTrueNumCats3() {
 		// TODO
-		r.catExists(2); 
-	}
+<span class="fc" id="L175">		r.catExists(2); </span>
+<span class="fc" id="L176">	}</span>
 
 	/**
 	 * Test case for String listCats().
 	 * Preconditions: r has no cats.
 	 * Execution steps: Call listCats().
-	 * Postconditions: Return value is "".
+	 * Postconditions: Return value is &quot;&quot;.
 	 */
 
 	@Test
 	public void testListCatsNumCats0() {
 		// TODO
-		r.listCats(); 
-	}
+<span class="fc" id="L188">		r.listCats(); </span>
+<span class="fc" id="L189">	}</span>
 
 	/**
 	 * Test case for String listCats().
 	 * Preconditions: c1, c2, and c3 are added to r using addCat(Cat c).
 	 * Execution steps: Call listCats().
-	 * Postconditions: Return value is "ID 1. Jennyanydots\nID 2. Old
-	 *                 Deuteronomy\nID 3. Mistoffelees\n".
+	 * Postconditions: Return value is &quot;ID 1. Jennyanydots\nID 2. Old
+	 *                 Deuteronomy\nID 3. Mistoffelees\n&quot;.
 	 */
 	
 	@Test
 	public void testListCatsNumCats3() {
 		// TODO
-	}
+<span class="fc" id="L202">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -211,7 +211,7 @@ public class RentACatTest {
 	@Test
 	public void testRentCatFailureNumCats0() {
 		// TODO
-	}
+<span class="fc" id="L214">	}</span>
 
 	/**
 	 * Test case for boolean rentCat(int id).
@@ -228,7 +228,7 @@ public class RentACatTest {
 	@Test
 	public void testRentCatFailureNumCats3() {
 		// TODO
-	}
+<span class="fc" id="L231">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -240,7 +240,7 @@ public class RentACatTest {
 	@Test
 	public void testReturnCatFailureNumCats0() {
 		// TODO
-	}
+<span class="fc" id="L243">	}</span>
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -258,5 +258,6 @@ public class RentACatTest {
 	@Test
 	public void testReturnCatNumCats3() {
 		// TODO
-	}
+<span class="fc" id="L261">	}</span>
 }
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202101150304</span></div></body></html>
