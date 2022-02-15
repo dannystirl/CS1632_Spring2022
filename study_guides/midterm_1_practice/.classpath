@@ -29,9 +29,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/hamcrest-core-1.1.jar"/>
-	<classpathentry kind="lib" path="lib/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="lib/mockito-core-1.10.19.jar"/>
-	<classpathentry kind="lib" path="lib/objenesis-2.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -64,7 +64,7 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 6 (Week of 14 FEB)
 
-* Class 1: Midterm 1 review 
+* Class 1: Midterm 1 review / TopHat questions
 
 * Class 2: Study for Midterm 1 (NO CLASS)
   

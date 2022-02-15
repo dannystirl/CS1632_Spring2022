@@ -15,7 +15,7 @@ public class DeathStarTest {
 	 *                 Planet receives a damage of 100 hit points
 	 */
 	@Test
-	public void testGetDamageShootTwice() {
+	public void testShootPlanet() {
 		// TODO: Fill in!
 	}
 }
