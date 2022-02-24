@@ -155,9 +155,13 @@ AFIST = [_A Friendly Introduction to Software Testing_](software-quality-assuran
 
 ## WEEK 14 (Week of 11 APR)
 
-* Class 1: Guest Lecture (TBD)
+* April 12 (Tuesday) 1:00 PM - 2:15 PM: [Duquesne Light](https://www.duquesnelight.com/) Guest Lecture on CI/CD and Security Testing
 
-* Class 2: Guest Lecture (TBD)
+* April 12 (Tuesday) 4:00 PM - 5:15 PM: [CGI](https://www.cgi.com/en) Guest Lecture on Data Analytics and QA
+
+* April 14 (Thursday) 1:00 PM - 2:15 PM: [Deloitte](https://www.deloitte.com/) Guest Lecture on In-depth Selenium Testing
+
+* April 14 (Thursday) 4:00 PM - 5:15 PM: [CGI](https://www.cgi.com/en) Guest Lecture on Machine Learning and QA
 
 ## WEEK 15 (Week of 18 APR)
 
