@@ -6,6 +6,10 @@ So that I can be not accused of cat abduction.
 
 Background:
 # TODO: Include your test fixture here
+Given a rent-a-cat facility
+And a cat with ID 1 and name "Jennyanydots"
+And a cat with ID 2 and name "Old Deuteronomy"
+And a cat with ID 3 and name "Mistoffelees"
 
 Rule: When a cat is requested for return and the cat has not been rented,
 the return is unsuccessful and the list of available cats remains the same.

@@ -1,10 +1,11 @@
 package edu.pitt.cs.cs1632;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class RentACatImpl implements RentACat {
 
-	private ArrayList<Cat> cats = new ArrayList<Cat>();
+	private ArrayList<Cat> cats = new ArrayList<>();
 
 	/**
 	 * Return a cat. This should call the .returnCat() method on the cat for the
@@ -18,6 +19,12 @@ public class RentACatImpl implements RentACat {
 
 	public boolean returnCat(int id) {
 		// TODO
+		for(Cat cat : cats){
+			if(cat.getId()==id && cat.getRented()){ 
+				cat.returnCat();
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -32,7 +39,12 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public boolean rentCat(int id) {
-		// TODO
+		for(Cat cat : cats){
+			if(!cat.getRented() && cat.getId()==id) {
+				cat.rentCat();
+				return true; 
+			}
+		}
 		return false;
 	}
 
@@ -47,8 +59,13 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public String listCats() {
-		// TODO
-		return "WRITE CODE FOR THIS";
+		String catsString = ""; 
+		for(Cat cat : cats){
+			if(!cat.getRented())  {
+				catsString = catsString.concat(cat.toString()+"\n"); 
+			}
+		}
+		return catsString;
 	}
 
 	/**
@@ -62,6 +79,11 @@ public class RentACatImpl implements RentACat {
 
 	public boolean catExists(int id) {
 		// TODO
+		for(Cat cat : cats){
+			if(cat.getId() == id){
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -75,9 +97,8 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public boolean catAvailable(int id) {
-
 		// null / zero-element check
-		if (cats == null || cats.size() == 0) {
+		if (cats == null || cats.isEmpty()) {
 			return false;
 		}
 		Cat c = getCat(id);
@@ -106,7 +127,7 @@ public class RentACatImpl implements RentACat {
 	public Cat getCat(int id) {
 
 		// null / zero-element check
-		if (cats == null || cats.size() == 0) {
+		if (cats == null || cats.isEmpty()) {
 			return null;
 		}
 

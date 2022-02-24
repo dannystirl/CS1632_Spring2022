@@ -18,6 +18,14 @@ public class SquareTest {
 		Number number = Mockito.mock(Number.class);
 		square.setSquared(number, 3);
 		Mockito.verify(number).setVal(9);
+
+		number = Mockito.mock(Number.class);
+		square.setSquared(number, 3);
+		
+		//Mockito.when(number.getVal()).thenReturn(9);
+		//assertEquals(9, number.getVal());
+		
+		Mockito.verify(number).setVal(9);
 	}
 
 }

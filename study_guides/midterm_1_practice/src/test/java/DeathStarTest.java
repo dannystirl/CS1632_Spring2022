@@ -1,8 +1,5 @@
-
-
-import static org.junit.Assert.*;
 import org.mockito.*;
-
+import io.cucumber.java.Before;
 import org.junit.Test;
 
 public class DeathStarTest {
@@ -14,8 +11,19 @@ public class DeathStarTest {
 	 * PostConditions: Return value of deathStar.shoot(planet) is "Wimpy planet was hit by the superlaser!"
 	 *                 Planet receives a damage of 100 hit points
 	 */
+
+	DeathStar deathStar = new DeathStar(); 
+	
+	@Before
+	public void setUp() {
+		deathStar = new DeathStar();
+	}
+
 	@Test
 	public void testShootPlanet() {
-		// TODO: Fill in!
+		Planet planet = Mockito.mock(Planet.class);
+
+		Mockito.when(planet.getHitPoints()).thenReturn(10); 
+		Mockito.verify(deathStar, Mockito.times(1)).shoot(planet);
 	}
 }
